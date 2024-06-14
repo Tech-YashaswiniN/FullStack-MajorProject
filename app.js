@@ -56,6 +56,8 @@ async function main() {
     await mongoose.connect(dburl);
 }
 
+module.exports = dburl;
+
 // connect-mongo package 
 const store = MongoStore.create({
     mongoUrl: dburl,

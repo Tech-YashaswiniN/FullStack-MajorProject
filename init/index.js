@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../modules/listing.js");
 
+ATLASDB_URL="mongodb+srv://yashaswininanjappaji16:Yashaswini16@cluster0.ydog0pk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+
 main()
     .then((res) => {
         console.log("connected to db");
@@ -11,7 +14,7 @@ main()
     })
 
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
+    await mongoose.connect(ATLASDB_URL);
 }
 
 const initDB = async () => {
@@ -29,3 +32,7 @@ const initDB = async () => {
 };
 
 initDB();
+
+
+
+
