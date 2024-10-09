@@ -53,7 +53,7 @@ main()
 
 async function main() {
     //await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust"); //Instead of this localhoast link i am using Mongodb atlas cloud generated link
-    await mongoose.connect(dburl);
+   await mongoose.connect(dburl);
 }
 
 module.exports = dburl;
@@ -152,9 +152,5 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
     console.log("server is listening to port ", port);
 })
-
-
-
-
 
 
