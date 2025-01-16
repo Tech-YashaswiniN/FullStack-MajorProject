@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../modules/listing.js");
 
-ATLASDB_URL="mongodb+srv://yashaswininanjappaji16:Yashaswini16@cluster0.ydog0pk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+ATLASDB_URL= "mongodb+srv://yashaswininanjappaji16:Yashaswini16@cluster0.ydog0pk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 
 main()
@@ -16,6 +16,7 @@ main()
 async function main() {
     await mongoose.connect(ATLASDB_URL);
 }
+
 
 const initDB = async () => {
     await Listing.deleteMany({});

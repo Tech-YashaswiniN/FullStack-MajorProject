@@ -46,6 +46,31 @@ router
 //edit route
 router.get("/:id/edit", islLoggedIn, isOwner, wrapAsync(listingController.renderEditForm))
 
+// Route to render the payment page
+router.get("/:id/payment", async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        // Fetch the listing details from the database
+        const listing = await Listing.findById(id);
+
+        if (!listing) {
+            req.flash("error", "Listing not found!");
+            return res.redirect("/listings");
+        }
+
+        res.render("listings/payment", {
+            listing,
+            phonePeQR: "/images/phonepe-qr.png", // Add your QR code paths here
+            gPayQR: "/images/gpay-qr.png",
+        });
+    } catch (error) {
+        console.error("Error loading payment page:", error.message);
+        req.flash("error", "Unable to load payment page.");
+        res.redirect("/listings");
+    }
+});
+
 
 
 

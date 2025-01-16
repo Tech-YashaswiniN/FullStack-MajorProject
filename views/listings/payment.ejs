@@ -1,0 +1,22 @@
+<% layout("/layouts/boilerplate") -%>
+
+    <div class="payment-container">
+        <h1>Complete Your Payment</h1>
+        <h2>Listing: <%= listing.title %></h2>
+        <p>Description: <%= listing.description %></p>
+        <p>Location: <%= listing.location %></p>
+        <p class="total-amount">Total Amount: <span>₹<%= listing.price %></span></p>
+
+        <h3>Choose Your Payment Option</h3>
+        <div class="payment-options">
+            <div class="payment-method">
+                <h4>PhonePe</h4>
+                <img src="<%= phonePeQR %>" alt="PhonePe QR Code" style="width: 200px;">
+            </div>
+            <div class="payment-method">
+                <h4>GPay</h4>
+                <img src="<%= gPayQR %>" alt="GPay QR Code" style="width: 200px;">
+            </div>
+        </div>
+    </div>
+
