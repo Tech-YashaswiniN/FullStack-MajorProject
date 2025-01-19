@@ -154,6 +154,17 @@ body {
    width:60vw; 
 }
 
+/* signup  and login*/
+.signup, .login{
+    margin:10rem 0 3rem 0;
+    font-size: 2.3rem;
+}
+
+.signup span{
+    color: #fe424d;
+    font-weight: 900;
+}
+
 
 /* payment */
 

@@ -83,9 +83,9 @@ const sessionOptions = {
     }
 };
 
-// app.get('/', (req, res) => {
-//     res.send("Hello i am root")
-// })
+app.get('/', (req, res) => {
+    res.redirect("/signup")
+})
 
 
 app.use(session(sessionOptions));
@@ -116,10 +116,10 @@ app.use((req, res, next) => {
 //     res.send(registeredUser);
 // })
 
+
 app.use('/listings', listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);
-
 
 // app.get('/listings', async (req, res) => {
 //     let samplelisting = new Listing({
