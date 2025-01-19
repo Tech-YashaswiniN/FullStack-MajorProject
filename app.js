@@ -116,9 +116,13 @@ app.use((req, res, next) => {
 //     res.send(registeredUser);
 // })
 
+app.get("/", (req, res) => {
+    res.redirect("/signup");
+});
+
 app.use('/listings', listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
-app.use("/", listingsRouter);
+app.use("/", userRouter);
 
 
 // app.get('/listings', async (req, res) => {
